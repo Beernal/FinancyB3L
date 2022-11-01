@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "FinancyB3l",
+  "name": "FinancyB3L",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "55.0"

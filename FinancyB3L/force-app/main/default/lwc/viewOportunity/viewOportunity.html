@@ -1,8 +1,13 @@
 <template>
-    
+    <template if:true={oppData}>
         <div style="height: 300px;">
-            <lightning-datatable key-field="recordId" data={data} columns={columns}>
+            <lightning-datatable key-field="id" data={oportunityData} columns={columns}>
             </lightning-datatable>
         </div>
-    
+    </template>
+    <template if:false={oppData}>
+        <div class="slds-text-align_center">
+            <p>Não possui oportunidades</p>
+        </div>
+    </template>
 </template>
