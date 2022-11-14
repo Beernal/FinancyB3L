@@ -1,0 +1,35 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+        class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container slds-container_small">
+            <div class="slds-modal__header">
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{car.Name}</h1>
+            </div>
+            <div class="slds-grid slds-gutters  modalDes">
+                <div class="slds-modal__content slds-p-around_medium   slds-size_1-of-2 slds-text-align_left"
+                    id="modal-content-id-1">
+                    <div class="slds-col ">
+                        <p> Modelo:&nbsp;<span>{car.ModelCar__r.Name}</span></p>
+                    </div>
+                    <div class="slds-col">
+                        <p>Preço:&nbsp;$<span>{car.Price__c}</span>
+                        </p>
+                    </div>
+                    <div class="slds-col">
+                        <p>Tipo:&nbsp;<span>{car.Type__c}</span></p>
+                    </div>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium slds-size_1-of-2" id="modal-content-id-2">
+                    <div class="slds-col">
+                        <img src={car.Thumbnail__c}>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-modal__footer">
+                <lightning-button label="Close" onclick={setModalVisibleFalse}
+                    class="slds-m-bottom_small  slds-text-align_center"></lightning-button>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</template>

@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Cars">
+        <div class="slds-box">
+            <lightning-layout multiple-rows>
+                <template for:each={viewCars} for:item="Car">
+                    <div key={Car.Id}
+                        class="slds-size_3-of-12 slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+                        <div class="slds-box slds-p-around_medium slds-text-align_center">
+                            <div class="slds-col">
+                                <span class="slds-avatar slds-avatar_large">
+                                    <img src={Car.Thumbnail__c} height="100px" width="100px">
+                                </span>
+                                <div class="slds-col">
+                                    <span>{Car.Name}</span>
+                                </div>
+                                <lightning-button label="Detail" onclick={viewDetails} data-id={Car.Id}
+                                    class="slds-m-bottom_small  slds-text-align_center"></lightning-button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <template if:true={modalVisible}>
+                    <c-modal-cars car={selectedCar} oncancel={setModalVisibleFalse}>
+                    </c-modal-cars>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
